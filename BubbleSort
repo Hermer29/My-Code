@@ -6,7 +6,7 @@ namespace Bubble_sort
     {
         static void Main(string[] args)
         {
-            var array = new int[] 
+            var array = new int[] // Объявляем массив:
             {
                 8,7,6,5,4,3,2,1
             };
@@ -18,9 +18,15 @@ namespace Bubble_sort
             Console.WriteLine();
         }
 
-        static int[] BubbleSort(ref int[] array)
+        /*Алгоритм:
+        1. Проходим по массиву с целыми значениями от первого элемента до предпоследнего (чтобы не вылезать за границы)
+        2. Проходя по массиву, если текущий элемент больше следующего мы меняем их местами и запоминаем это
+        3. Если обмен за весь проход по массиву произошел возвращаемся к первому пункту, в ином случае алгоритм завершен
+        */
+        
+        static void BubbleSort(ref int[] array)   // Передаем по ссылке массив который мы будем сортировать
         {
-            bool ArraySwapped = true;
+            bool ArraySwapped = true; // Добавляем переменную фиксирующую, был ли произведен обмен 
             do
             {
                 ArraySwapped = false;
