@@ -1,0 +1,36 @@
+program AtoO;
+
+uses crt;
+
+var
+  i: Integer;
+  s, sres: String;
+
+procedure swap(s: string);
+var
+  i: Integer;
+  a: array of String;
+begin
+  setlength(a, length(s)+1);
+  for i := 1 to length(s) do
+  begin
+    a[i] := copy(s, i, 1);
+    if a[i] = 'а' then begin
+      a[i] := 'о';
+    end;
+    if a[i] = 'А' then begin
+      a[i] := 'О';
+    end;
+  end;
+  for i := 1 to length(s) do
+  begin
+    sres:=concat(sres,a[i]);
+  end;
+  writeln(sres);
+end;
+
+begin
+  writeln('Введите 5 слов через пробел: ');
+  readln(s);
+  swap(s);
+end.
