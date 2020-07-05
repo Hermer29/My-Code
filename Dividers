@@ -1,0 +1,22 @@
+program abc; 
+
+var
+  n, k, i, g: Integer;
+  nk, n1, k1: String;
+
+
+begin
+  readln(nk);
+  n1 := copy(nk, 1, (pos(' ', nk) - 1));
+  k1 := copy(nk, pos(' ', nk) + 1, length(nk));
+  val(n1, n, i);
+  val(k1, k, i);
+  for i := 1 to n do 
+    begin
+      if i mod k = 0 then
+        begin
+          inc(g);
+        end ;
+    end;
+  writeln(g);
+end.
