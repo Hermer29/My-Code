@@ -1,0 +1,14 @@
+N = int(input('Введите N: '))
+lb = 2
+lb = int(input('Введите начало отсчёта: '))
+a = [ i for i in range(lb,N+1) if i % 2 != 0 ]
+a.insert(0,2)
+for i in a:
+	for j in a:
+		try:
+		    if (j % i == 0) and (i != j):
+			    a.remove(j)
+		except:
+			print(ValueError)
+			continue
+print(sum(a))
