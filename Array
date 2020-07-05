@@ -1,0 +1,62 @@
+program count_array; 
+
+uses
+  crt;
+
+
+var
+  m, i, j, u, k, i1, k1: Integer;
+  ans: String;
+  fa, sa, ta: array of Integer;
+
+
+begin
+  u := 0;
+  i1 := 0;
+  writeln('Введите размер массива');
+  readln(m);
+  while u = 0 do 
+    begin
+      writeln('Выбрать случайные числа в массиве?(Y/N)');
+      readln(ans);
+      if (ans <> 'Y') and (ans <> 'N') then
+        begin
+          writeln('Ответ не корректен, введите снова');
+        end 
+      else 
+        u := 1;
+    end;
+  setlength(fa, m + 1);
+  if ans = 'Y' then
+    randomize ;
+  for i := 1 to m do 
+    begin
+      fa[i] := random(1000);
+    end
+    else 
+    for i := 1 to m do 
+    begin
+      writeln('Введите ', i, ' элемент массива');
+      readln(fa[i]);
+    end;
+  writeln('Равные какому числу вывести элементы матрицы?');
+  readln(k);
+  for i := 1 to m do 
+    begin
+      if fa[i] = k then
+        begin
+          inc(i1);
+          sa[i1] := i;
+          ta[i1] := fa[i1];
+        end ;
+    end;
+  writeln('Количество чисел равных k: ', i1);
+  if i1 <> 1 then
+    begin
+      writeln('Это числа под номером: ');
+      for i := 1 to i1 do 
+        begin
+          write(ta[i], ', ');
+        end;
+    end ;
+end.
