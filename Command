@@ -1,0 +1,56 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace Socnet
+{
+
+    public abstract class Command 
+    {
+      abstract List<string> CommandList;
+    }
+    
+    public static class SQLCommand : Command
+    {
+       public static string GetMessageTextByID()
+       {
+          
+       }
+       
+       public static string ChangePassword(string OldPassword, string NewPassword)
+       {
+          
+       }
+       
+       public static void DeleteUser(string Password)
+       {
+          
+       }
+       
+       public static void ChangeUsername(string NewUsername)
+       {
+          
+       }
+       
+       public static void RegisterUser(string login, string password, string username)
+       {
+          
+       }
+       
+       public static void GetMessageCount()
+       {
+          
+       }
+    }
+    
+    public class ClientCommand : Command
+    {
+       
+    }
+    
+    piblic class ServerCommand : Command
+    {
+       
+    }
+}
